@@ -6,6 +6,33 @@
 <title>Invitation Flip</title>
 
 <style>
+  /* Make front a positioning container */
+.front {
+  position: relative;
+}
+
+/* Swipe hint */
+.swipe-hint {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 14px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-style: italic;
+  z-index: 10;   /* 🔥 VERY IMPORTANT */
+  
+  animation: slideHint 1.5s infinite;
+}
+
+/* Animation */
+@keyframes slideHint {
+  0% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(10px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.7; }
+}
 body {
   display: flex;
   justify-content: center;
@@ -106,6 +133,9 @@ body {
     <!-- FRONT -->
     <div class="front">
       <img src="Invitation card.png" alt="Invitation">
+        <div class="swipe-hint">
+    Tap / Swipe →
+  </div>
     </div>
 
     <!-- BACK -->
